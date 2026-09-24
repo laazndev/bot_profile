@@ -1,9 +1,8 @@
-# IoB Bot Profile Ontology — Reproducibility Package
+# IoB Bot Profile Ontology : Reproducibility Package
 
 Companion repository for:
 
 > "Internet of Bots: Toward a Bot Profile-Centric Ecosystem for Digital Services"  
-> IEEE Access (2nd revision)
 
 ---
 
@@ -74,7 +73,7 @@ sparql --data botprofile.owl --query sparql/CQ4.rq
 
 ## Query Results
 
-### CQ1 — Interoperable semantic core (HL7 FHIR ∩ SNOMED CT)
+### CQ1. Interoperable semantic core (HL7 FHIR ∩ SNOMED CT)
 
 > Which bots declare alignment with both HL7 FHIR and SNOMED CT?
 
@@ -89,7 +88,7 @@ sparql --data botprofile.owl --query sparql/CQ4.rq
 
 ---
 
-### CQ2 — Trust-critical autonomous components (FullyAutomated ∩ Restricted)
+### CQ2. Trust-critical autonomous components (FullyAutomated ∩ Restricted)
 
 > Which bots operate fully autonomously and require restricted authorization?
 
@@ -103,7 +102,7 @@ sparql --data botprofile.owl --query sparql/CQ4.rq
 
 ---
 
-### CQ3 — Clinical entry points (HumanToBot ∩ (SNOMED CT ∪ NCI Thesaurus))
+### CQ3. Clinical entry points (HumanToBot ∩ (SNOMED CT ∪ NCI Thesaurus))
 
 > Which bots support direct human-to-bot interaction and declare alignment with at least one oncology-specific terminology standard?
 
@@ -116,7 +115,7 @@ sparql --data botprofile.owl --query sparql/CQ4.rq
 
 ---
 
-### CQ4 — Deterministic compliance verification (RuleBased ∩ Internal ∩ dataSensitivity=true)
+### CQ4. Deterministic compliance verification (RuleBased ∩ Internal ∩ dataSensitivity=true)
 
 > Which bots apply rule-based reasoning to handle sensitive patient data under internal authorization?
 

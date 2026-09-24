@@ -1,0 +1,8 @@
+# CQ1. Which bots declare alignment with both HL7 FHIR and SNOMED CT,
+#      constituting the interoperable semantic core of the cancer care coordination workflow?
+
+PREFIX bp: <http://www.IoB.org/ontologies/botprofile#>
+SELECT ?name WHERE {
+  ?b bp:name ?name ;
+     bp:ontologiesUsed bp:HL7_FHIR ;
+     bp:ontologiesUsed bp:SNOMED_CT . }

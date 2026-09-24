@@ -1,0 +1,11 @@
+# CQ3. Which bots support direct human-to-bot interaction and declare alignment with
+#      at least one oncology-specific terminology standard (SNOMED CT or NCI Thesaurus),
+#      identifying the clinical entry points of the cancer care pathway?
+
+PREFIX bp: <http://www.IoB.org/ontologies/botprofile#>
+SELECT ?name WHERE {
+  ?b bp:name ?name ;
+     bp:hasCommunicationStyle bp:HumanToBot .
+  { ?b bp:ontologiesUsed bp:SNOMED_CT }
+  UNION
+  { ?b bp:ontologiesUsed bp:NCI_Thesaurus } }

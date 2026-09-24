@@ -1,0 +1,8 @@
+# CQ2. Which bots can operate fully autonomously and require restricted authorization,
+#      identifying the trust-critical components of the oncology workflow?
+
+PREFIX bp: <http://www.IoB.org/ontologies/botprofile#>
+SELECT ?name WHERE {
+  ?b bp:name ?name ;
+     bp:hasAutonomy bp:FullyAutomated ;
+     bp:authLevel "Restricted" . }

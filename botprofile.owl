@@ -1,0 +1,705 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.IoB.org/ontologies/botprofile#"
+     xml:base="http://www.IoB.org/ontologies/botprofile"
+     xmlns:bp="http://www.IoB.org/ontologies/botprofile#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.IoB.org/ontologies/botprofile">
+        <rdfs:label>IoB Bot Profile Ontology</rdfs:label>
+        <rdfs:comment>Internet of Bots Bot Profile Ontology. TBox + ABox instantiation for the cancer care continuum use case (6 bot individuals). Supports SPARQL competency questions CQ1-CQ4 (Section 5.4 of the paper).</rdfs:comment>
+    </owl:Ontology>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#hasAutonomy -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#hasAutonomy">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#hasCommunicationStyle -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#hasCommunicationStyle">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#hasInteraction -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#hasInteraction">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#hasTechnology -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#hasTechnology">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#ontologiesUsed -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#ontologiesUsed">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#protocolsSupported -->
+
+    <owl:ObjectProperty rdf:about="http://www.IoB.org/ontologies/botprofile#protocolsSupported">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+    </owl:ObjectProperty>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#authLevel -->
+    <!-- Note: defined as DatatypeProperty (xsd:string) so that SPARQL queries
+         CQ2 and CQ4 using literal filters ("Restricted", "Internal") execute correctly. -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#authLevel">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#botID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#botID">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#capabilityLevel -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#capabilityLevel">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#dataSensitivity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#dataSensitivity">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#domain -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#domain">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#name -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#name">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#provider -->
+
+    <owl:DatatypeProperty rdf:about="http://www.IoB.org/ontologies/botprofile#provider">
+        <rdfs:domain rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#AIPowered -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#AIPowered">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#AccessLevel -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#AccessLevel"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#AutonomyLevel -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#B2B -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#B2B">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Bot -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Bot"/>
+
+
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#ButtonBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#ButtonBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Graphical"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#CommunicationProtocol -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#CommunicationStyle -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Conversational -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Conversational">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#CreativeBot -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#CreativeBot">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#FaceBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#FaceBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Conversational"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#FiPaACL -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#FiPaACL">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#FoundationModelAI -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#FoundationModelAI">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AIPowered"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#FullyAutomated -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#FullyAutomated">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Graphical -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Graphical">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#H2B -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#H2B">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#HTTP -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#HTTP">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+    </owl:Class>
+
+
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#InformationalBot -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#InformationalBot">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#InteractionMode -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Internal -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Internal">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AccessLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#ListBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#ListBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Graphical"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Low -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Low">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#MenuBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#MenuBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Graphical"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#MonitoringBot -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#MonitoringBot">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Multimodal -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Multimodal">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#NarrowAI -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#NarrowAI">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AIPowered"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Ontology -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#PartiallyAutomated -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#PartiallyAutomated">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Public -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Public">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AccessLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#REST -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#REST">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Restricted -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Restricted">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#AccessLevel"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#RetrievalBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#RetrievalBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#RuleBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#RuleBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#S2B -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#S2B">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#TaskOrientedBot -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#TaskOrientedBot">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Bot"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Technology -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Technology"/>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#TextBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#TextBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Conversational"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#VoiceBased -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#VoiceBased">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#Conversational"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#gRPC -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#gRPC">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationProtocol"/>
+    </owl:Class>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#Command&amp;Control -->
+
+    <owl:Class rdf:about="http://www.IoB.org/ontologies/botprofile#Command&amp;Control">
+        <rdfs:subClassOf rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+    </owl:Class>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Named Individuals — enumeration values (used as object property values in SPARQL)
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- Autonomy level individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#FullyAutomated">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+        <rdfs:label>FullyAutomated</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#PartiallyAutomated">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+        <rdfs:label>PartiallyAutomated</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#LowAutomation">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#AutonomyLevel"/>
+        <rdfs:label>Low</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!-- Technology individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#RuleBased">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+        <rdfs:label>RuleBased</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#NarrowAI">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+        <rdfs:label>NarrowAI</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#FoundationModelAI">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+        <rdfs:label>FoundationModelAI</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#RetrievalBased">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Technology"/>
+        <rdfs:label>RetrievalBased</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!-- Communication style individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#HumanToBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+        <rdfs:label>HumanToBot (H2B)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#BotToBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+        <rdfs:label>BotToBot (B2B)</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#BotToService">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#CommunicationStyle"/>
+        <rdfs:label>BotToService (B2S)</rdfs:label>
+    </owl:NamedIndividual>
+
+
+
+    <!-- Interaction mode individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#MultimodalMode">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Multimodal"/>
+        <rdfs:label>Multimodal</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#CommandAndControl">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#InteractionMode"/>
+        <rdfs:label>CommandAndControl</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!-- Domain ontology individuals (used as values of bp:ontologiesUsed) -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#HL7_FHIR">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+        <rdfs:label>HL7 FHIR</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#SNOMED_CT">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+        <rdfs:label>SNOMED CT</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#ICD_10">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+        <rdfs:label>ICD-10</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#NCI_Thesaurus">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#Ontology"/>
+        <rdfs:label>NCI Thesaurus</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!-- Protocol individuals -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#REST_protocol">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#REST"/>
+        <rdfs:label>REST</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#HTTP_protocol">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP"/>
+        <rdfs:label>HTTP</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#gRPC_protocol">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#gRPC"/>
+        <rdfs:label>gRPC</rdfs:label>
+    </owl:NamedIndividual>
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#FIPA_ACL_protocol">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#FiPaACL"/>
+        <rdfs:label>FIPA-ACL</rdfs:label>
+    </owl:NamedIndividual>
+
+
+    <!--
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Bot Individuals (ABox) — Cancer Care Continuum (6 instances)
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#PrimaryCareBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#PrimaryCareBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#InformationalBot"/>
+        <bp:botID>bot-cc-001</bp:botID>
+        <bp:name>PrimaryCareBot</bp:name>
+        <bp:domain>e-health</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#NarrowAI"/>
+        <bp:capabilityLevel>query, collect, share, notify</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#PartiallyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#MultimodalMode"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#HumanToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToBot"/>
+        <bp:authLevel>Internal</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#SNOMED_CT"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP_protocol"/>
+        <rdfs:label>Bot 1 : Primary Care Bot</rdfs:label>
+        <rdfs:comment>Informational bot responsible for gathering patient identity, symptoms, medical history, and insurance details. Acts as the entry point of the cancer care journey, interacting directly with the patient (H2B) and forwarding structured data to Bot 2 (B2B).</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#SpecialistCoordinationBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#SpecialistCoordinationBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#TaskOrientedBot"/>
+        <bp:botID>bot-cc-002</bp:botID>
+        <bp:name>SpecialistCoordinationBot</bp:name>
+        <bp:domain>e-health</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#FoundationModelAI"/>
+        <bp:capabilityLevel>schedule, delegate, execute, notify, transfer</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#FullyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#CommandAndControl"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToService"/>
+        <bp:authLevel>Restricted</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#ICD_10"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#gRPC_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#FIPA_ACL_protocol"/>
+        <rdfs:label>Bot 2 : Specialist Coordination Bot</rdfs:label>
+        <rdfs:comment>Ensures bot collaboration; schedules appointments; arranges diagnostics (MRI, biopsy); improves clinician flow.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#HealthInsuranceBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#HealthInsuranceBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#TaskOrientedBot"/>
+        <bp:botID>bot-cc-003</bp:botID>
+        <bp:name>HealthInsuranceBot</bp:name>
+        <bp:domain>e-health, health-insurance</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#RuleBased"/>
+        <bp:capabilityLevel>query, validate, decide, notify</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#PartiallyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#CommandAndControl"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToService"/>
+        <bp:authLevel>Internal</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#ICD_10"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP_protocol"/>
+        <rdfs:label>Bot 3 : Health Insurance Bot</rdfs:label>
+        <rdfs:comment>Validates insurance coverage; applies rules to confirm or deny eligibility; notifies coordination bot and patient.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#TreatmentProgrammerBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#TreatmentProgrammerBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#TaskOrientedBot"/>
+        <bp:botID>bot-cc-004</bp:botID>
+        <bp:name>TreatmentProgrammerBot</bp:name>
+        <bp:domain>e-health, oncology, pharmacy</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#NarrowAI"/>
+        <bp:capabilityLevel>schedule, execute, manage, notify, reschedule</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#PartiallyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#MultimodalMode"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#HumanToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToService"/>
+        <bp:authLevel>Internal</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#NCI_Thesaurus"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#SNOMED_CT"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#gRPC_protocol"/>
+        <rdfs:label>Bot 4 : Treatment Programmer Bot</rdfs:label>
+        <rdfs:comment>Schedules chemotherapy and radiation cycles; manages e-prescriptions with pharmacy; notifies stakeholders.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#CareTrackerBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#CareTrackerBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#MonitoringBot"/>
+        <bp:botID>bot-cc-005</bp:botID>
+        <bp:name>CareTrackerBot</bp:name>
+        <bp:domain>e-health, remote-monitoring, IoT</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#NarrowAI"/>
+        <bp:capabilityLevel>monitor, collect, alert, send, track</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#FullyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#MultimodalMode"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToService"/>
+        <bp:authLevel>Restricted</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#SNOMED_CT"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#gRPC_protocol"/>
+        <rdfs:label>Bot 5 : Care Tracker Bot</rdfs:label>
+        <rdfs:comment>Monitors vital signs and treatment adherence via wearable IoT; triggers alerts when thresholds are crossed.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+    <!-- http://www.IoB.org/ontologies/botprofile#RecordsManagerBot -->
+
+    <owl:NamedIndividual rdf:about="http://www.IoB.org/ontologies/botprofile#RecordsManagerBot">
+        <rdf:type rdf:resource="http://www.IoB.org/ontologies/botprofile#CreativeBot"/>
+        <bp:botID>bot-cc-006</bp:botID>
+        <bp:name>RecordsManagerBot</bp:name>
+        <bp:domain>e-health, EHR, data-management</bp:domain>
+        <bp:hasTechnology rdf:resource="http://www.IoB.org/ontologies/botprofile#FoundationModelAI"/>
+        <bp:capabilityLevel>collect, create, generate, update, share, manage</bp:capabilityLevel>
+        <bp:hasAutonomy rdf:resource="http://www.IoB.org/ontologies/botprofile#FullyAutomated"/>
+        <bp:hasInteraction rdf:resource="http://www.IoB.org/ontologies/botprofile#CommandAndControl"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToBot"/>
+        <bp:hasCommunicationStyle rdf:resource="http://www.IoB.org/ontologies/botprofile#BotToService"/>
+        <bp:authLevel>Restricted</bp:authLevel>
+        <bp:dataSensitivity rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</bp:dataSensitivity>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#HL7_FHIR"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#ICD_10"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#NCI_Thesaurus"/>
+        <bp:ontologiesUsed rdf:resource="http://www.IoB.org/ontologies/botprofile#SNOMED_CT"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#REST_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#gRPC_protocol"/>
+        <bp:protocolsSupported rdf:resource="http://www.IoB.org/ontologies/botprofile#HTTP_protocol"/>
+        <rdfs:label>Bot 6 : Records Manager Bot (Data Manager)</rdfs:label>
+        <rdfs:comment>Generates and maintains the patient EHR from all upstream data; grants patient read access.</rdfs:comment>
+    </owl:NamedIndividual>
+
+
+</rdf:RDF>

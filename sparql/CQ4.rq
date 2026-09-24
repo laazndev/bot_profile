@@ -1,0 +1,12 @@
+# CQ4. Which bots apply rule-based reasoning to handle sensitive patient data under
+#      internal authorization, identifying the component designed for deterministic
+#      compliance verification in the oncology pathway?
+
+PREFIX bp: <http://www.IoB.org/ontologies/botprofile#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+SELECT ?name ?domain WHERE {
+  ?b bp:name ?name ;
+     bp:domain ?domain ;
+     bp:hasTechnology bp:RuleBased ;
+     bp:authLevel "Internal" ;
+     bp:dataSensitivity "true"^^xsd:boolean . }
